@@ -1,0 +1,24 @@
+{
+  "name": "medusa",
+  "version": "0.0.0",
+  "description": "Medusa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dacrol/Medusa.git"
+  },
+  "author": "Dacrol",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Dacrol/Medusa/issues"
+  },
+  "homepage": "https://github.com/Dacrol/Medusa#readme",
+  "dependencies": {
+    "compression": "^1.7.2",
+    "express": "^4.16.2",
+    "python-shell": "^0.5.0"
+  }
+}
