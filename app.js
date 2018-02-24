@@ -5,6 +5,7 @@ const PythonShell = require('python-shell');
 // Create express server
 const app = express();
 
+// @ts-ignore
 const pyScript = new PythonShell('./python/run.py');
 
 // Express middleware
