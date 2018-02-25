@@ -1,9 +1,9 @@
 import sys
 
 def main():
-    input = sys.stdin.readline()
-    if input:
-        sys.stdout.write('Python received: ' + input)
+    input_data = sys.stdin.readline()
+    if input_data:
+        sys.stdout.write('Python received: ' + input_data)
         print('You have found snakes')
         sys.stdout.flush()
 
