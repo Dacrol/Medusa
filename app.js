@@ -10,6 +10,7 @@ const app = express()
 const pyScript = new PythonShell('./python/run.py')
 // @ts-ignore
 const pyImage = new PythonShell('./python/image-mediator.py', {
+  pythonOptions: ['-u'],
   mode: 'binary'
 })
 
