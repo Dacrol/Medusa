@@ -33,8 +33,8 @@ pyImage.stdout.on('data', function (data) {
 console.log('Sending \x1b[34m%s\x1b[0m Python: I am looking for snakes', 'TO')
 pyScript.send('I am looking for snakes')
 
-let img = fs.readFileSync('medusa.jpg', 'base64')
-console.log('base64 length: ' + img.length)
+// let img = fs.readFileSync('medusa.jpg', 'base64')
+// console.log('base64 length: ' + img.length)
 
 fs.readFile('medusa.jpg', 'base64', function (err, data) {
   if (err) {

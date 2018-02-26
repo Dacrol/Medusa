@@ -1,5 +1,5 @@
-<!-- ![Medusa](medusa.jpg) -->
+<!-- ![Medusa](medusa.png) -->
 &nbsp;  
 <p align="center">
-<img src="medusa.jpg" alt="Medusa" width="50%">
+<img src="medusa.png" alt="Medusa" width="50%">
 </p>
