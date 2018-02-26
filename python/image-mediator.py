@@ -4,9 +4,12 @@ import numpy as np
 import base64
 from PIL import Image
 from io import BytesIO
+import time
 
 
 def main():
+    print('Receiving')
+    start = time.time()
     input_data = sys.stdin.buffer.read()
     # input_data = sys.stdin.read()
     bio = BytesIO()
@@ -14,6 +17,8 @@ def main():
     pil_image = Image.open(bio)
     image_array = np.array(pil_image)
     sys.stdin.close()
+    print('Received')
+    print('Time: ' + str(round((time.time() - start) * 1000)) + ' ms')
     if input_data:
         image = cv2.cvtColor(image_array, cv2.COLOR_RGB2BGR)
         # image = image_array
