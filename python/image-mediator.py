@@ -1,17 +1,36 @@
 import sys
 import cv2
-import numpy
+import numpy as np
+import base64
+from PIL import Image
+from io import BytesIO
+
 
 def main():
-    input_data = sys.stdin.read()
+    # print('reading...')
+    input_data = sys.stdin.buffer.read()
+    # input_data = sys.stdin.read()
+    bio = BytesIO()
+    bio.write(base64.b64decode(input_data))
+    pil_image = Image.open(bio)
+    image_array = np.array(pil_image)
+    sys.stdin.close()
+    # # image_array = np.array(bytearray(input_data.encode('utf-8', 'surrogateescape')))
+    # image_array = np.fromstring(input_data.encode('utf-8', 'surrogateescape'), dtype=np.int)
     if input_data:
-        image_array = numpy.frombuffer(input_data)
-        image = cv2.imdecode(image_array, 1)
-        # sys.stdout.write('Python received: ' + input_data)
-        # print('You have found snakes')
-        cv2.imshow("window", image)
-        sys.stdout.write(image)
+        # image = cv2.imdecode(image_array, 1)
+        image = cv2.cvtColor(image_array, cv2.COLOR_RGB2BGR)
+        # image = cv2.cvtColor(image_array, cv2.IMREAD_COLOR)
+        # image = image_array
+        # sys.stdout.write(str(image.shape))
+        # sys.stdout.write(str(image))
+        # sys.stdout.write(np.array_str(image_array))
+        # buffer = cv2.imencode('.png', image)
+        # b64image = base64.b64encode(buffer)
         sys.stdout.flush()
+        cv2.imshow("window", image)
+        cv2.waitKey(2000)
+
 
 if __name__ == '__main__':
     main()
