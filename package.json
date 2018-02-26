@@ -4,7 +4,8 @@
   "description": "Medusa",
   "main": "app.js",
   "scripts": {
-    "debug": "nodemon --config nodemon.json --exec \"sleep 2 && yarn inspect\"",
+    "start": "node app.js",
+    "debug": "nodemon --config nodemon.json --exec \"sleep 0.5 && yarn inspect\"",
     "inspect": "node --inspect=9229 app.js",
     "test": "yarn eslint",
     "eslint": "eslint **/*.js"
@@ -29,7 +30,7 @@
     "eslint": "^4.18.1",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "nodemon": "^1.15.1"

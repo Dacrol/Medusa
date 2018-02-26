@@ -5,11 +5,11 @@
        "node_modules/**/*"
       ],
     "watch": [
-      "*.js"
+      "*.js",
+      "*.py"
     ],
     "verbose": true,
-    "ext": "js json",
-    "delay": "500",
+    "ext": "js json py",
     "runOnChangeOnly": false,
     "exitcrash": false
   }
