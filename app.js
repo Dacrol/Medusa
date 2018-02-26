@@ -25,14 +25,8 @@ app.listen(3400, () => console.log('Webserver listening on port 3400'))
 pyScript.on('message', function (message) {
   console.log('Received \x1b[31m%s\x1b[0m Python: ' + message, 'FROM')
 })
-
 pyImage.stdout.on('data', function (data) {
-  // console.log('Received \x1b[31m%s\x1b[0m Python: ' + data, 'FROM')
-  // console.log(data)
-  // console.log(Buffer.from(data, 'uint8').toString('base64'))
-  // console.log(Buffer.from(data, 'binary').toString())
   console.log(Buffer.from(data).toString('binary'))
-  // console.log(Buffer.from(data).toString())
 })
 
 // Send to stdin
@@ -47,14 +41,9 @@ fs.readFile('medusa.jpg', 'base64', function (err, data) {
     console.warn(err)
   }
   // let base64Image = Buffer.from(data, 'binary').toString('base64')
-  // let base64Image = new Buffer(data, 'base64')
   console.log('Sending...')
-  // var decodedImage = new Buffer(data.toString('base64'), 'base64');
-
-  pyImage.send(data)
-  // pyImage.send(decodedImage)
-  // pyImage.stdout.write(data)
-  // pyImage.stdin.write(base64Image)
+  // pyImage.send(data)
+  pyImage.stdin.write(data)
   // pyImage.end()
   pyImage.end(function (err, code, signal) {
     if (err) {
@@ -66,7 +55,7 @@ fs.readFile('medusa.jpg', 'base64', function (err, data) {
   })
 })
 
-// Handle end of input streams
+// End of input streams
 pyScript.end(function (err, code, signal) {
   if (err) {
     console.warn(err)
@@ -75,12 +64,3 @@ pyScript.end(function (err, code, signal) {
   console.log('The exit signal was: ' + signal)
   console.log('finished')
 })
-
-// pyImage.end(function (err, code, signal) {
-//   if (err) {
-//     console.warn(err)
-//   }
-//   console.log('The exit code was: ' + code)
-//   console.log('The exit signal was: ' + signal)
-//   console.log('finished')
-// })

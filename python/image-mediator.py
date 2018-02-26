@@ -7,7 +7,6 @@ from io import BytesIO
 
 
 def main():
-    # print('reading...')
     input_data = sys.stdin.buffer.read()
     # input_data = sys.stdin.read()
     bio = BytesIO()
@@ -15,12 +14,8 @@ def main():
     pil_image = Image.open(bio)
     image_array = np.array(pil_image)
     sys.stdin.close()
-    # # image_array = np.array(bytearray(input_data.encode('utf-8', 'surrogateescape')))
-    # image_array = np.fromstring(input_data.encode('utf-8', 'surrogateescape'), dtype=np.int)
     if input_data:
-        # image = cv2.imdecode(image_array, 1)
         image = cv2.cvtColor(image_array, cv2.COLOR_RGB2BGR)
-        # image = cv2.cvtColor(image_array, cv2.IMREAD_COLOR)
         # image = image_array
         # sys.stdout.write(str(image.shape))
         # sys.stdout.write(str(image))
