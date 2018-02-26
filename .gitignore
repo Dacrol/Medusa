@@ -87,3 +87,5 @@ build/Release
 node_modules
 
 \.vscode/\.ropeproject/
+
+medusa\.psd
