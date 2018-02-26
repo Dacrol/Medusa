@@ -22,8 +22,8 @@ def main():
     if input_data:
         image = cv2.cvtColor(image_array, cv2.COLOR_RGB2BGR)
         # image = image_array
-        # sys.stdout.write(str(image.shape))
-        # sys.stdout.write(str(image))
+        sys.stdout.write(str(image.shape))
+        # sys.stdout.write(str(image_array.shape))
         # sys.stdout.write(np.array_str(image_array))
         # buffer = cv2.imencode('.png', image)
         # b64image = base64.b64encode(buffer)
