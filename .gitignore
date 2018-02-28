@@ -89,3 +89,6 @@ node_modules
 \.vscode/\.ropeproject/
 
 medusa\.psd
+
+python/training/dataset/*
+!python/training/dataset/.gitkeep
