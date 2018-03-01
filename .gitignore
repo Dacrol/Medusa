@@ -91,4 +91,5 @@ node_modules
 medusa\.psd
 
 python/training/dataset/*
+python/training/dataset
 !python/training/dataset/.gitkeep
