@@ -5,6 +5,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python - Current",
+      "type": "python",
+      "request": "launch",
+      "stopOnEntry": true,
+      "pythonPath": "${config:python.pythonPath}",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "envFile": "${workspaceFolder}/.env",
+      "debugOptions": [
+        "RedirectOutput"
+      ]
+    },
+    {
       "type": "node",
       "request": "attach",
       "name": "Attach nodemon",
