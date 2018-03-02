@@ -5,6 +5,34 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python - Train",
+      "type": "python",
+      "request": "launch",
+      "stopOnEntry": false,
+      "pythonPath": "${config:python.pythonPath}",
+      "program": "${workspaceFolder}/python/training/train.py",
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "envFile": "${workspaceFolder}/.env",
+      "debugOptions": [
+        "RedirectOutput"
+      ]
+    },
+    {
+      "name": "Python - Current",
+      "type": "python",
+      "request": "launch",
+      "stopOnEntry": false,
+      "pythonPath": "${config:python.pythonPath}",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "envFile": "${workspaceFolder}/.env",
+      "debugOptions": [
+        "RedirectOutput"
+      ]
+    },
+    {
       "type": "node",
       "request": "attach",
       "name": "Attach nodemon",
