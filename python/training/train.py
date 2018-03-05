@@ -1,4 +1,4 @@
-from filterdataset.main import Filterer
+from filterdataset import Filterer
 
 # filterer = Filterer()
 filterer = Filterer(attributes_file='python/training/dataset/attributes.txt')
